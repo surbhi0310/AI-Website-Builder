@@ -17,7 +17,7 @@ function Dashbord() {
   const handlewebsitedeply = async (id) => {
     try {
       const result = await axios.get(
-        `http://localhost:8000/website/deploy/${id}`,
+        `https://ai-website-builder-ahl4.onrender.com/website/deploy/${id}`,
         { withCredentials: true },
       );
       if (result.data.url) {
@@ -34,7 +34,7 @@ function Dashbord() {
   useEffect(() => {
     const fetchWebsites = async () => {
       try {
-        const res = await axios.get("http://localhost:8000/website/getall", {
+        const res = await axios.get("https://ai-website-builder-ahl4.onrender.com/website/getall", {
           withCredentials: true,
         });
         setWebsites(res.data);

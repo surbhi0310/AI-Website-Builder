@@ -57,7 +57,7 @@ function WebEditor() {
         );
 
         const res = await axios.get(
-          `http://localhost:8000/website/getwebsite/${id}`,
+          `https://ai-website-builder-ahl4.onrender.com/website/getwebsite/${id}`,
           {
             withCredentials: true,
           },
@@ -127,7 +127,7 @@ function WebEditor() {
       );
 
       const result = await axios.post(
-        `http://localhost:8000/website/update/${id}`,
+        `https://ai-website-builder-ahl4.onrender.com/website/update/${id}`,
         {
           prompt: currentPrompt,
         },

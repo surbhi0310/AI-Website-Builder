@@ -18,7 +18,7 @@ function Login({ open, closelogin, setopenlogin }) {
     console.log("Firebase login successful:", result.user);
 
     const response = await axios.post(
-      "http://localhost:8000/auth/login",
+      "https://ai-website-builder-ahl4.onrender.com/auth/login",
       {
         name: result.user.displayName,
         email: result.user.email,

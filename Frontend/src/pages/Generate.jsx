@@ -45,7 +45,7 @@ function Generate() {
       }, 1500);
 
       const result = await axios.post(
-        "http://localhost:8000/website/generate",
+        "https://ai-website-builder-ahl4.onrender.com/website/generate",
         {
           prompt: prompt.trim(),
         },

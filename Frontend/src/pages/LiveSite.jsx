@@ -18,7 +18,7 @@ function LiveSite() {
     const fetchWebsite = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8000/website/getbyslug/${id}`,
+          `https://ai-website-builder-ahl4.onrender.com/website/getbyslug/${id}`,
           { withCredentials: true },
         );
         setHtml(res.data.latestcode);

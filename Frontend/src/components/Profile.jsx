@@ -14,7 +14,7 @@ function Profile({ setprofile }) {
   const Handlelogout = async () => {
     console.log("logout click");
     try {
-      const kabhail = await axios.get("http://localhost:8000/auth/logout", {
+      const kabhail = await axios.get("https://ai-website-builder-ahl4.onrender.com/auth/logout", {
         withCredentials: true,
       });
       dispatch(logout());

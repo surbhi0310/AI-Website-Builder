@@ -9,7 +9,7 @@ function Fetchdata() {
     const getcurrentData = async () => {
       try {
         const result = await axios.get(
-          "http://localhost:8000/user/currentData",
+          "https://ai-website-builder-ahl4.onrender.com/user/currentData",
           { withCredentials: true },
         );
         dispatch(setUserData(result.data.sabdata));
