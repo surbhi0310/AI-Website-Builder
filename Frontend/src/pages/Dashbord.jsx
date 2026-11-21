@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { API_URL } from "../config/api.js";
 
 function Dashbord() {
   const sabdata = useSelector((state) => state.user.userData);
@@ -17,7 +18,7 @@ function Dashbord() {
   const handlewebsitedeply = async (id) => {
     try {
       const result = await axios.get(
-        `https://ai-website-builder-ahl4.onrender.com/website/deploy/${id}`,
+        `${API_URL}/website/deploy/${id}`,
         { withCredentials: true },
       );
       if (result.data.url) {
@@ -34,7 +35,7 @@ function Dashbord() {
   useEffect(() => {
     const fetchWebsites = async () => {
       try {
-        const res = await axios.get("https://ai-website-builder-ahl4.onrender.com/website/getall", {
+        const res = await axios.get(`${API_URL}/website/getall`, {
           withCredentials: true,
         });
         setWebsites(res.data);

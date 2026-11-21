@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { BiSolidLeftArrowSquare } from "react-icons/bi";
 import { motion } from "framer-motion";
 import axios from "axios";
+import { API_URL } from "../config/api.js";
 
 function LiveSite() {
   const { id } = useParams();
@@ -18,7 +19,7 @@ function LiveSite() {
     const fetchWebsite = async () => {
       try {
         const res = await axios.get(
-          `https://ai-website-builder-ahl4.onrender.com/website/getbyslug/${id}`,
+          `${API_URL}/website/getbyslug/${id}`,
           { withCredentials: true },
         );
         setHtml(res.data.latestcode);

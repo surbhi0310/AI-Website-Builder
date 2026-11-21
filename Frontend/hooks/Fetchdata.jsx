@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setUserData } from "../src/redux/userSlice";
+import { API_URL } from "../src/config/api";
 
 function Fetchdata() {
   const dispatch = useDispatch();
@@ -9,7 +10,7 @@ function Fetchdata() {
     const getcurrentData = async () => {
       try {
         const result = await axios.get(
-          "https://ai-website-builder-ahl4.onrender.com/user/currentData",
+          `${API_URL}/user/currentData`,
           { withCredentials: true },
         );
         dispatch(setUserData(result.data.sabdata));

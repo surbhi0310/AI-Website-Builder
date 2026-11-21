@@ -5,6 +5,7 @@ import { LuCoins } from "react-icons/lu";
 import axios from "axios";
 import { logout } from "../redux/userSlice";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../config/api.js";
 
 function Profile({ setprofile }) {
   const sabdata = useSelector((state) => state.user.userData);
@@ -14,7 +15,7 @@ function Profile({ setprofile }) {
   const Handlelogout = async () => {
     console.log("logout click");
     try {
-      const kabhail = await axios.get("https://ai-website-builder-ahl4.onrender.com/auth/logout", {
+      const kabhail = await axios.get(`${API_URL}/auth/logout`, {
         withCredentials: true,
       });
       dispatch(logout());

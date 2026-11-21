@@ -6,6 +6,7 @@ import { inMemoryPersistence, signInWithPopup, signOut } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { setUserData } from "../redux/userSlice.js";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../config/api.js";
 function Login({ open, closelogin, setopenlogin }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ function Login({ open, closelogin, setopenlogin }) {
     console.log("Firebase login successful:", result.user);
 
     const response = await axios.post(
-      "https://ai-website-builder-ahl4.onrender.com/auth/login",
+      `${API_URL}/auth/login`,
       {
         name: result.user.displayName,
         email: result.user.email,

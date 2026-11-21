@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { API_URL } from "../config/api.js";
 
 function Generate() {
   const navigate = useNavigate();
@@ -45,7 +46,7 @@ function Generate() {
       }, 1500);
 
       const result = await axios.post(
-        "https://ai-website-builder-ahl4.onrender.com/website/generate",
+        `${API_URL}/website/generate`,
         {
           prompt: prompt.trim(),
         },

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { API_URL } from "../config/api.js";
 import React, {
   useEffect,
   useState,
@@ -57,7 +58,7 @@ function WebEditor() {
         );
 
         const res = await axios.get(
-          `https://ai-website-builder-ahl4.onrender.com/website/getwebsite/${id}`,
+          `${API_URL}/website/getwebsite/${id}`,
           {
             withCredentials: true,
           },
@@ -127,7 +128,7 @@ function WebEditor() {
       );
 
       const result = await axios.post(
-        `https://ai-website-builder-ahl4.onrender.com/website/update/${id}`,
+        `${API_URL}/website/update/${id}`,
         {
           prompt: currentPrompt,
         },
